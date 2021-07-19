@@ -36,7 +36,7 @@ function calcDiscount(sum, min, discount) {
      if (productsSum>=discountMinSum) {discountSum=productsSum*discountPart/100} else discountSum=0;
     // Конец решения задания №2.2.
 
-    return discountSum;
+    return discountPrice;
 }
 
 function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shippingPrice}) {
@@ -60,7 +60,7 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
     // если shippingSum равно нулю, то freeShipping должна быть равна true, иначе freeShipping должна быть равна false
      let freeShipping;
      shippingSum==0;//true;
-    shippingSum!=0;//false;
+     shippingSum!=0;//false;
     // Конец решения задачи №2.3.
 
     return {discount: discountSum, freeShipping, shipping: shippingSum, total: totalSum};
