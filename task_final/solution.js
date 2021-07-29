@@ -36,10 +36,13 @@
 function sendRequest(name, phone, street, house, entrance, floor, flat, goods, sum, title, count) {
     let data = {client: name,
                  order: { adress: street + ', '+house + ', ' + entrance + ', ' + floor + ', ' + flat, sum}, 
-                 goods: [title]};
+                 goods: [{title: title, count: count}]
+                };
 
-    let countOfGoods =/* goods.length;
-     data.goods.title=*/[title + ' ' + count];
+    let countOfGoods = data.goods.title
+    
+    /* goods.length;
+     data.goods.title=[title + ', ' + count];*/
 
     for (let i = 0; i <= countOfGoods.length; i++) {
         data.goods.push(goods[i].title);
@@ -56,8 +59,6 @@ function sendRequest(name, phone, street, house, entrance, floor, flat, goods, s
     data.goods.count = count;*/
      
     
-
-
     let jsonData = JSON.stringify(data);
 
     return jsonData;
