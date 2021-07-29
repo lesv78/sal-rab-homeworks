@@ -46,7 +46,11 @@ function sendRequest(name, phone, address, goods, sum) {
 
     data.client.name = name;
     data.client.phone = phone;
-    data.order.address = address;
+    data.order.address.street = street;
+    data.order.address.house = house;
+    data.order.address.entrance = entrance;
+    data.order.address.floor = floor;
+    data.order.address.flat = flat;
     data.order.sum = sum;
     data.goods.title = title;
     data.goods.count = count;
