@@ -32,47 +32,17 @@
 //      ]
 //    }
 // }
-/*
-function sendRequest(name, phone, street, house, entrance, floor, flat, goods, sum, title, count) {
-    let data = {client: name,
-                 order: { adress: street + ', '+house + ', ' + entrance + ', ' + floor + ', ' + flat, sum}, 
-                 goods: [{title: title, count: count}]
-                };
 
-    let countOfGoods =  goods.length;
-    goods[i]={title: goods[i].tite, count: goods[i].count}
-   
 
-    for (let i = 0; i < countOfGoods; i++) {
-        data.goods.push(goods[i].title);
-    }
-
-    data.client.name = name+' '+phone;
-    data.order.address.street = street;
-    data.order.address.house = house;
-    data.order.address.entrance = entrance;
-    data.order.address.floor = floor;
-    data.order.address.flat = flat;
-    data.order.sum = sum;
-  /*  data.goods.title = title;
-    data.goods.count = count;*/
-     
-    
-    /*let jsonData = JSON.stringify(data);
-
-    return jsonData;
-}*/
 function sendRequest(name, phone, address, goods, sum) {
     let data = {client: {}, goods: [], order: {}};
 
     let countOfGoods = goods.length;
 
     for (let i = 0; i < countOfGoods; i++) {
-        goods[i]={title:goods[i].title, count: goods[i].count}
-        data.goods.push(goods[i].title);
-    }
-
-    
+        goods[i]={title:goods[i].title, count: goods[i].count};
+        data.goods.push(goods[i].title)
+    };
 
     data.order.address = 'ул. ' ${address.street}, 'дом ' ${address.house}, 
     ${address.entrance} ' подъезд', ${address.floor} ' этаж', 'кв ' ${address.flat};
